@@ -1,0 +1,27 @@
+{
+  "name": "DstyleScaffoldingJspProject",
+  "version": "1.0.0",
+  "description": "프로젝트 진행 할때 사용할 필요 스니핏 창고",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dstyle0210/Pantry.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dstyle0210/Pantry/issues"
+  },
+  "homepage": "https://github.com/dstyle0210/Pantry#readme",
+  "devDependencies": {
+    "@types/gulp": "^4.0.6",
+    "browserify": "^16.5.1",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.1",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  }
+}
