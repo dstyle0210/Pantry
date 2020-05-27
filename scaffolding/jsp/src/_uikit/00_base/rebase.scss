@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import "../00_config/val.scss";
+@import "../00_config/mixin.scss";
+@import "../00_config/function.scss";
+/*
+* @File Name : base.scss
+* @author : Dstyle
+* @Description : 프로젝트의 공통 엘리먼트 스타일 선언
+* @exports : src/asset/scss/projectName_uikit_base.scss
+*
+* @Modification Information
+*
+* 수정일 : 수정자 : 수정내용
+* ------------------------
+* 2020.05.22 : Dstyle : 작성시작
+*/
+
+/*! 프로젝트 공통 엘리먼트 설정 */
+body{
+  font-size:$FONT-SIZE; // 프로젝트 폰트 기본사이즈
+  line-height:$FONT-LINE-HEIGHT; // 프로젝트 줄간격 기본사이즈(기본은 폰트사이즈의 1.5배)
+  color:$COLOR-FONT; // 프로젝트 기본 글자색
+  background:#fff; // 프로젝트 body 배경색
+}
+
+// a 엘리먼트 설정
+a{
+  color:$COLOR-LINK; // 프로젝트 기본 링크색
+  display:inline-block; // a 링크는 버튼의 속성으로 단독으로 쓰이는 경우가 많아, inline-block 채용.
+  text-decoration:none; // 밑줄 없음
+
+  // 마우스오버시 상태
+  &:hover{
+    color:$COLOR-LINK--hover; // 프로젝트 기본 링크색
+    text-decoration:underline; // 밑줄 생성
+  }
+}
+
+
