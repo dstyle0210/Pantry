@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/*
+* @File Name : 01_atoms/04_button/button.scss
+* @author : Dstyle
+* @Description : 버튼 요소
+*
+* @Modification Information
+*
+* 수정일 : 수정자 : 수정내용
+* ------------------------
+* 2020.04.21 : Dstyle : 최초생성
+*/
+/*! ATOMS > 버튼요소 */
+.a-button{
+  display:inline-block; text-align:center; line-height:1.2; text-decoration:none;
+  >span{display:inline-block;line-height:1;vertical-align:top;}
+
+  // 기본선언
+  font-size:13px;padding:7px 12px;font-weight:bold;
+  color:#333;background:#ccc;border:1px solid #696969;
+
+  // 사이즈별
+  &.-xs{font-size:11px;padding:3px 5px;font-weight:normal;}
+  &.-sm{font-size:12px;padding:5px 10px 6px;font-weight:normal;}
+  &.-nm{font-size:13px;padding:7px 12px;font-weight:bold;} // 기본
+  &.-lg{font-size:14px;padding:12px 40px;font-weight:bold;}
+  &.-xl{font-size:19px;padding:15px 40px;font-weight:bold;}
+
+  &.-gray{color:#333;background:#ccc;border:1px solid #696969;} // 기본
+  &.-darkGray{color:#fff;background:#333;border:1px solid #333;}
+  &.-brand{color:#fff;background:#cc2f26;border:1px solid #cc2f26;}
+  &.-subBrand{color:#fff;background:#ff6600;border:1px solid #ff6600;}
+  &.-white{color:#333;background:#fff;border:1px solid #696969;}
+  &.-disabled{color:#ccc;background:#f7f7f7;border:1px solid #eaeaea;}
+
+  // 블럭화
+  &.-inline{display:inline;
+    >span{vertical-align:middle;}
+  }
+  &.-inline-block{display:inline-block;} // 기본
+  &.-block{display:block;}
+
+}

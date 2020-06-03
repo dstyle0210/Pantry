@@ -1,11 +1,10 @@
 {
-  "name": "DstyleScaffoldingJspProject",
+  "name": "y",
   "version": "1.0.0",
   "description": "프로젝트 진행 할때 사용할 필요 스니핏 창고",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "vender": "npm update jquery swiper -D"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,14 +17,6 @@
   },
   "homepage": "https://github.com/dstyle0210/Pantry#readme",
   "devDependencies": {
-    "browserify": "^16.5.1",
-    "gulp": "^3.9.1",
-    "gulp-cli": "^2.2.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.1.0",
-    "jquery": "^3.5.1",
-    "swiper": "^5.4.1",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "gulp": "^3.9.1"
   }
 }

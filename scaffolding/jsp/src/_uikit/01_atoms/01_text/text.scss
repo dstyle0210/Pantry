@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*
+* @File Name : text.scss
+* @author : Dstyle
+* @Description : 텍스트 요소
+* @exports : src/_entry/scss/projectName_uikit_atoms.scss
+*
+* @Modification Information
+*
+* 수정일 : 수정자 : 수정내용
+* ------------------------
+* 2020.06.01 : Dstyle : 작성시작
+*/
+.a-text{
+  // 폰트사이즈
+  &.-xl{font-size:32px;}
+  &.-lg{font-size:26px;}
+  &.-md{font-size:18px;}
+  &.-nm{font-size:14px;}
+  &.-sm{font-size:12px;}
+  &.-xs{font-size:11px;}
+
+  //폰트컬러
+  &.-text{color:#666;}
+  &.-brand{color:#cc2f26;}
+  &.-subBrand{color:#ff6600;}
+  &.-blueBrand{color:#2076c7;}
+  &.-dark{color:#111;}
+  &.-gray{color:#999;}
+}
+
+

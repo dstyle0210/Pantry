@@ -19,8 +19,9 @@ function bundle(cb){
         browserify("src/_entry/js/projectName_pages_main.js")
         .bundle()
         .pipe(source("main.js"))
-        .pipe(gulp.dest("src/js")
-        );
+        .pipe(gulp.dest("src/js"))
+    );
+
 };
 exports.test1 = gulp.series(transpile,clean,bundle);
 exports.test2 = gulp.parallel(transpile,clean,bundle);
