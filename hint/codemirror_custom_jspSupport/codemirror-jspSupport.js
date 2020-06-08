@@ -2,8 +2,40 @@ CodeMirror.jspSupport = function(block){
     $(block).find(".cm-tag").each(function(){
         if( $(this).text()=="jsp:include" ){
             $(this).html("<span class='cm-jsp'>jsp</span>:<span class='cm-include'>include</span>");
-        };
+        }else if( $(this).text()=="jsp:param" ){
+            $(this).html("<span class='cm-jsp'>jsp</span>:<span class='cm-include'>param</span>");
+        }
     });
+    if( $(block).hasClass("language-css") ){
+        // RGB값 적용
+        $(block).find(".cm-atom").each(function(){
+            if( (/^\#/).test($(this).text()) ){
+                $(this).removeClass().addClass("cm-rgb");
+            };
+        });
+
+        // 어파스트로피 적용
+        var cssHtml = $(block).html();
+        cssHtml.replace(/;+/,"<span>;</span>");
+        $(block).html(cssHtml);
+    };
+
+    if( $(block).hasClass("language-sass") ){
+        // RGB값 적용
+        $(block).find(".cm-atom").each(function(){
+            if( (/^\#/).test($(this).text()) ){
+                $(this).removeClass().addClass("cm-rgb");
+            };
+        });
+
+        // 어파스트로피 적용
+        var cssHtml = $(block).html();
+        cssHtml.replace(/;+/,"<span>;</span>");
+        $(block).html(cssHtml);
+    };
+
+    // console.log(block);
+    // language-css
 };
 /*
 if(content == "jsp:include"){
