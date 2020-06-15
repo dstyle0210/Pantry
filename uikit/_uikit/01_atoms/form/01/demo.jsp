@@ -32,14 +32,14 @@
 <body>
 <div class="resultWrapper">
 
-    <jsp:include page="button.jsp"></jsp:include>
+    <jsp:include page="input.jsp"></jsp:include>
 
 </div>
 
 
 <div class="codeWrapper">
 <pre><code class="language-html">
-<jsp:include page="button.jsp"></jsp:include>
+<jsp:include page="input.jsp"></jsp:include>
 </code></pre>
     <script>
         $(function(){

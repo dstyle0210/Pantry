@@ -104,5 +104,4 @@ typings/
 /Pantry.iml
 .idea/
 Pantry.iml
-uikit/_vender/**/*
 /uikit/_vender/codemirror/

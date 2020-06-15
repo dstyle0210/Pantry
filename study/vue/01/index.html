@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE 공부</title>
+    <script src="../_vender/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>야호 나는 데이터, {{title}}</h1>
+    <input type="text" v-model="title" />
+</div>
+<script>
+    var data = {
+        title:"나는 데이터 입니다."
+    };
+    new Vue({
+        el:"#app",
+        data:data
+    });
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dstyle Uikit Demo: 버튼 01</title>
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="heading.css">
     <link rel="stylesheet" href="/uikit/_vender/codemirror/lib/codemirror.css" />
     <link rel="stylesheet" href="/uikit/_vender/codemirror/theme/dstylePantry.css" />
     <link rel="stylesheet" href="/uikit/_vender/codemirror/custom/codemirror-jspSupport.css" /> <!-- jsp:include , jsp:param 을 이쁘게 만들기 위한 별도커스텀 개발한거 -->
@@ -32,14 +32,14 @@
 <body>
 <div class="resultWrapper">
 
-    <jsp:include page="button.jsp"></jsp:include>
+    <jsp:include page="heading.jsp"></jsp:include>
 
 </div>
 
 
 <div class="codeWrapper">
 <pre><code class="language-html">
-<jsp:include page="button.jsp"></jsp:include>
+<jsp:include page="heading.jsp"></jsp:include>
 </code></pre>
     <script>
         $(function(){
@@ -72,6 +72,11 @@
         });
     </script>
 </div>
-
+<script>
+    window.onload = function(){
+        console.log(parent);
+        parent.setDemo($("body").height());
+    }
+</script>
 </body>
 </html>

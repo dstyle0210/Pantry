@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dstyle uikit : 버튼01</title>
+    <title>Dstyle uikit : 헤딩</title>
     <link rel="stylesheet" href="button.css">
     <link rel="stylesheet" href="/uikit/_vender/codemirror/lib/codemirror.css" />
     <link rel="stylesheet" href="/uikit/_vender/bootstrap/css/bootstrap.min.css" />
@@ -31,7 +31,7 @@
         .apiExampleList>li{flex:1;}
         .apiWrapper{width:90%;margin:0 auto;}
         *{list-style:none;margin:0;padding:0;}
-        .preview{width:100%;border:0;}
+        .preview{width:100%;height:200px;border:0;}
         .previewForm ul{display:flex;}
         .previewForm li{margin-left:20px;}
         .previewForm li:first-child{margin-left:0;}
@@ -41,48 +41,36 @@
 <body>
 <div class="apiWrapper">
     <section class="apiHeader">
-        <h1>버튼 01</h1>
-        <p>사각형태의 기본 버튼 형태 입니다.</p>
+        <h1>헤딩 01</h1>
+        <p>헤딩요소(h1~h6) 에서만 사용가능한 클래스</p>
     </section>
     <section class="apiDemo">
         <h3>Demo</h3>
         <form action="demo.jsp" target="api" method="post" id="props" class="previewForm">
             <ul>
                 <li class="form-group">
-                    <label for="opt0">color</label>
-                    <select name="color" id="opt0" class="form-control">
+                    <label for="opt0">hx</label>
+                    <select name="hx" id="opt0" class="form-control">
                         <option value="">기본</option>
-                        <option value="gray">gray</option>
-                        <option value="darkGray">darkGray</option>
-                        <option value="brand">brand</option>
-                        <option value="subBrand">subBrand</option>
-                        <option value="white">white</option>
-                        <option value="disabled">disabled</option>
+                        <option value="h1">h1</option>
+                        <option value="h2">h2</option>
+                        <option value="h3">h3</option>
+                        <option value="h4">h4</option>
+                        <option value="h5">h5</option>
+                        <option value="h6">h6</option>
                     </select>
                 </li>
                 <li class="form-group">
-                    <label for="opt1">size</label>
-                    <select name="size" id="opt1" class="form-control">
+                    <label for="opt1">borderYn</label>
+                    <select name="borderYn" id="opt1" class="form-control">
                         <option value="">기본</option>
-                        <option value="xs">xs</option>
-                        <option value="sm">sm</option>
-                        <option value="nm">nm</option>
-                        <option value="lg">lg</option>
-                        <option value="xl">xl</option>
+                        <option value="Y">보더 사용</option>
+                        <option value="N">보더 미사용</option>
                     </select>
                 </li>
                 <li class="form-group">
-                    <label for="opt2">display</label>
-                    <select name="display" id="opt2" class="form-control">
-                        <option value="">기본</option>
-                        <option value="inline">inline</option>
-                        <option value="inline-block">inline-block</option>
-                        <option value="block">block</option>
-                    </select>
-                </li>
-                <li class="form-group">
-                    <label for="opt3">text</label>
-                    <input type="text" name="text" id="opt3" value="버튼" class="form-control" />
+                    <label for="opt2">title</label>
+                    <input type="text" name="title" id="opt2" value="헤딩" class="form-control" />
                 </li>
             </ul>
         </form>
@@ -95,6 +83,9 @@
                     $("#props").submit();
                 });
             });
+            function setDemo(hei){
+                $("#api").height(hei);
+            };
         </script>
         <iframe src="demo.jsp" frameborder="0" name="api" id="api" class="preview"></iframe>
     </section>
@@ -102,17 +93,11 @@
     <section class="apiCode">
         <h3>선언코드(기본값)</h3>
 <pre><code class="language-jsp">
-&lt;jsp:include page="test.jsp">
-    &lt;jsp:param name="href" value="#">&lt;/jsp:param>
-    &lt;jsp:param name="target" value="">&lt;/jsp:param>
-    &lt;jsp:param name="title" value="">&lt;/jsp:param>
-    &lt;jsp:param name="tabIndex" value="">&lt;/jsp:param>
-    &lt;jsp:param name="id" value="">&lt;/jsp:param>
-    &lt;jsp:param name="text" value="버튼">&lt;/jsp:param>
-    &lt;jsp:param name="color" value="gray">&lt;/jsp:param>
-    &lt;jsp:param name="size" value="nm">&lt;/jsp:param>
-    &lt;jsp:param name="display" value="inline-block">&lt;/jsp:param>
-    &lt;jsp:param name="style" value="">&lt;/jsp:param>
+&lt;jsp:include page="heading.jsp">
+    &lt;jsp:param name="hx" value="h2">&lt;/jsp:param>
+    &lt;jsp:param name="borderYn" value="N">&lt;/jsp:param>
+    &lt;jsp:param name="title" value="헤딩">&lt;/jsp:param>
+    &lt;jsp:param name="desc" value="서브타이틀 or 부가설명">&lt;/jsp:param>
 &lt;/jsp:include>
 </code></pre>
         <script>
@@ -159,74 +144,32 @@
         </thead>
         <tbody>
         <tr class="bg-success">
-            <td>href</td>
+            <td>hx</td>
             <td>String</td>
-            <td>*</td>
-            <td>"#"</td>
-            <td>버튼링크의 "href" 어트리뷰트의 값, "" 로 지정 할경우 span 엘리먼트로 대체 됨</td>
+            <td>h1,h2,h3,h4,h5,h6</td>
+            <td>"h2"</td>
+            <td>헤딩 요소의 헤딩엘리먼트( h* )적용, atom의 수정클래스에도 적용됨</td>
         </tr>
         <tr>
-            <td>target</td>
+            <td>borderYn</td>
             <td>String</td>
-            <td>*</td>
-            <td>""</td>
-            <td>버튼링크의 "target" 어트리뷰트의 값, "" 로 지정 할경우 어트리뷰트 미적용됨</td>
+            <td>"Y" | "N"</td>
+            <td>"N"</td>
+            <td>헤딩 하단에 라인 적용, hx 파라매터에 따라 하단간격 조정됨</td>
         </tr>
         <tr>
             <td>title</td>
             <td>String</td>
             <td>*</td>
-            <td>""</td>
-            <td>버튼링크의 "title" 어트리뷰트의 값, "" 로 지정 할경우 어트리뷰트 미적용됨</td>
+            <td>"헤딩"</td>
+            <td>헤딩에 들어갈 타이틀 텍스트</td>
         </tr>
         <tr>
-            <td>tabIndex</td>
+            <td>desc</td>
             <td>String</td>
             <td>*</td>
-            <td>""</td>
-            <td>버튼링크의 "tabIndex" 어트리뷰트의 값, "" 로 지정 할경우 어트리뷰트 미적용됨</td>
-        </tr>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>*</td>
-            <td>""</td>
-            <td>버튼링크의 "id" 어트리뷰트의 값, "" 로 지정 할경우 어트리뷰트 미적용됨</td>
-        </tr>
-        <tr>
-            <td>text</td>
-            <td>String</td>
-            <td>*</td>
-            <td>"버튼"</td>
-            <td>버튼 링크 내 글자</td>
-        </tr>
-        <tr class="bg-success">
-            <td>color</td>
-            <td>String</td>
-            <td>gray, darkGray, brand, subBrand, white, disabled</td>
-            <td>gray</td>
-            <td>버튼의 색상변경</td>
-        </tr>
-        <tr class="bg-success">
-            <td>size</td>
-            <td>String</td>
-            <td>xs, sm, nm, lg, xl</td>
-            <td>nm</td>
-            <td>버튼의 크기변경</td>
-        </tr>
-        <tr>
-            <td>display</td>
-            <td>String</td>
-            <td>block, inline-block, inline</td>
-            <td>inline-block</td>
-            <td>버튼링크의 display 속성</td>
-        </tr>
-        <tr>
-            <td>style</td>
-            <td>String</td>
-            <td>*</td>
-            <td>""</td>
-            <td>버튼링크의 "style" 어트리뷰트의 값, "" 로 지정 할경우 어트리뷰트 미적용됨</td>
+            <td>"서브타이틀 or 부가설명"</td>
+            <td>헤딩 텍스트 우측에 들어간 서브텍스트 "" 빈 값일경우, 우측 "bar" 영역을 포함하여 미표시됨</td>
         </tr>
         </tbody>
     </table>

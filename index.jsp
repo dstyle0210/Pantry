@@ -10,6 +10,8 @@
     <title>Pantry Test</title>
 </head>
 <body>
-<a href="/uikit/_uikit/01_atoms/button/01/demo.jsp">uikit > atoms > button > 01</a>
+<a href="/uikit/_uikit/01_atoms/button/01/api.jsp">uikit > atoms > button > 01</a>
+<a href="/uikit/_uikit/01_atoms/heading/01/api.jsp">uikit > atoms > heading > 01</a>
+
 </body>
 </html>

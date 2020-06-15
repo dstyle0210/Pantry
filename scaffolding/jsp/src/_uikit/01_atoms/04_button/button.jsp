@@ -3,7 +3,7 @@
 <% request.setCharacterEncoding("UTF-8"); // 한글을 받는경우, 전달되는 파라매터를 UTF-8로 변환함. %>
 <%
     /*
-     * @File Name : 01_atoms/04_button/button.jsp
+     * @File Name : 01_atoms/04_button/heading.jsp
      * @author : Dstyle
      * @Description : 버튼요소
      *
