@@ -3,7 +3,6 @@
  * @author dstyle0210
  * @version 0.1 (alpha)
  * @since 2020.12.02
- * @require jquery.js
  * @returns {Object}
  * @example
  * __getbrowser(window); // return {object}
