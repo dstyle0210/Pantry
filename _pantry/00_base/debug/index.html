@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>테스트</title>
+    <script src="../getRequest/getRequest.js"></script>
+    <script src="debug.js"></script>
+    <style>
+        p{word-break:break-all;}
+    </style>
+</head>
+<body>
+<p id="test"></p>
+<a href="./index.html">디버그 모드 OFF</a>
+<a href="./index.html?debug=true">디버그 모드 ON</a>
+<p>콘솔창으로 동작여부 확인 가능</p>
+<script>
+function test(fnTest){
+    __fnLog("test" , arguments);
+};
+test("fnTest");
+</script>
+</body>
+</html>
