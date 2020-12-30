@@ -22,3 +22,8 @@ var __windowOnPageLoaded = function(){
     };
     return el.className.split(" "); // <html> 엘리먼트가 가진 클래스명 전체 콜렉션 (Array) 리턴
 };
+/*
+윈도우 온로드 window.onload 는 하나만 실행 됨.
+그러면 나중에 중복되는 코드 있으면 해당 함수 날라감.
+interval 로 onpageload 체크해서 없으면 확인?
+ */
