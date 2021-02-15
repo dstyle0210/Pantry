@@ -1,0 +1,4 @@
+@charset "UTF-8";
+
+/*! 레이어 오픈할경우 스크롤 영역 멈춤 */
+body.-bodyScrollDisabled{min-height:100vh!important;height:100vh!important;overflow:hidden!important;touch-action:none;}
