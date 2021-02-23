@@ -1,8 +1,8 @@
 function scrollDisable(){
-    $('body').addClass('bodyScrollDisabled').on('scroll touchmove mousewheel', function(e){
+    $('body').addClass('bodyScrollDisabled').on('scroll touchmove wheel', function(e){
         e.preventDefault();
     });
 }
 function scrollAble(){
-    $('body').removeClass('bodyScrollDisabled').off('scroll touchmove mousewheel');
+    $('body').removeClass('bodyScrollDisabled').off('scroll touchmove wheel');
 }
