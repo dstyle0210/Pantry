@@ -8,14 +8,72 @@
 </head>
 <body>
 
+<style>
+input[class^=a-form]:focus{outline:none;}
+input[type=text][class^=a-form]{box-sizing:border-box;border:1px solid #999;font-size:13px;color:#333;min-height:20px;line-height:20px;width:100%;}
+input[type=password][class^=a-form]{box-sizing:border-box;border:1px solid #999;font-size:13px;color:#333;min-height:20px;line-height:20px;width:100%;}
+input[type=number][class^=a-form]{box-sizing:border-box;border:1px solid #999;font-size:13px;color:#333;min-height:20px;line-height:20px;width:100%;}
+input[type=email][class^=a-form]{box-sizing:border-box;border:1px solid #999;font-size:13px;color:#333;min-height:20px;line-height:20px;width:100%;}
+input[type=text][class^=a-form]:invalid{border:1px solid red;}
+input[type=number][class^=a-form]:invalid{border:1px solid red;}
+input[type=email][class^=a-form]:invalid{border:1px solid red;}
+
+
+label.a-form{position:relative;}
+label.a-form .a-form__error{display:none;position:absolute;bottom:0;left:0;padding-left:10px;margin-bottom:-25px;color:red;font-size:12px;}
+label.a-form .a-form__error:before{position:absolute;top:0;left:0;content:"*"}
+label.a-form .a-form__input:invalid{border:1px solid red;}
+label.a-form .a-form__input:invalid + .a-form__error{display:block;}
+</style>
+<h2>이름(한글)</h2>
+<label class="a-form -type-korName">
+    <input type="text" inputmode="text" autocapitalize="off" class="a-form__input" title="이름을 입력해주세요." placeholder="이름" pattern="^([가-힣]+)$" />
+    <span class="a-form__error">이름은 한글만 사용가능합니다.</span>
+</label>
+
+<h2>이메일(전체형식)</h2>
+<label class="a-form -type-email">
+    <input type="email" autocapitalize="off" inputmode="email" class="a-form__input" title="이메일을 입력해주세요." placeholder="test@test.com" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" />
+    <span class="a-form__error">이메일 정규식에 맞지 않습니다.</span>
+</label>
+
+<h2>이메일:아이디 만</h2>
+<label class="a-form -type-emailId">
+    <input type="text" autocapitalize="off" inputmode="text" class="a-form__input" title="아이디를 입력해주세요." placeholder="test" pattern="^([\w-]+(?:\.[\w-]+)*)$" />
+    <span class="a-form__error">아이디 정규식에 맞지 않습니다.</span>
+</label>
+
+<h2>이메일:도메인 만</h2>
+<label class="a-form -type-emailDomain">
+    <input type="text" autocapitalize="off" inputmode="text" class="a-form__input" title="아이디를 입력해주세요." placeholder="test" pattern="^([\w-]+(?:\.[\w-]+)*)$" />
+    <span class="a-form__error">아이디 정규식에 맞지 않습니다.</span>
+</label>
+
+
+
+<style>
+    /*
+    input[type=text]{border:1px solid #ccc;}
+    input[type=text]:focus{border:1px solid #333;}
+    input[type=text]:invalid{outline:2px solid red;}
+    input[type=text]:valid{border:1px solid #ccc;}
+    */
+    label input[type=text] + span.notice{display:none;}
+    label input[type=text]:invalid + span.notice{display:block;}
+</style>
 <h2>input[type=text]</h2>
-<input type="text" autocapitalize="off" class="a-form" />
+<input type="text" autocapitalize="off" class="a-form" title="인풋설명" placeholder="텍스트" />
+<input type="text" autocapitalize="off" class="a-form" title="test" placeholder="텍스트" pattern="^([0-9]*)$" />
+<label>
+    <input type="text" autocapitalize="off" class="a-form" title="test" placeholder="텍스트" pattern="^([0-9]*)$" />
+    <span class="notice">숫자만 입력 가능합니다.</span>
+</label>
 <!--
 * autocapitalize="off" : 첫문자 대문자로 표기되는것 방지(아이폰 전용)
+* inputmode : https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/inputmode
 -->
-
 <h2>input[type=password]</h2>
-<input type="password" class="a-form" />
+<input type="password" class="a-form" placeholder="비밀번호" />
 <!--
 * autocapitalize="off" : 첫문자 대문자로 표기되는것 방지(아이폰 전용)
 -->
