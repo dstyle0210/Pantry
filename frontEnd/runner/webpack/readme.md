@@ -15,3 +15,8 @@ npm i webpack webpack-cli -g
 npm i webpack webpack-cli -d
 ```
 
+#### babel 설치
+```
+npm i -D @babel/core babel-loader @babel/preset-env
+```
+
