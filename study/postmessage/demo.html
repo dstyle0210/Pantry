@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<iframe src="sub.html" id="test"></iframe>
+<button onclick="test33();return false;">확인</button>
+<script>
+    function test33(){
+        var iframe = document.getElementById("test");
+        iframe.contentWindow.postMessage("test","http://localhost:63342"); // origin은 실제, url이여야 한다. document.domain 변경은 먹히지 않음.
+        iframe.contentWindow.postMessage({
+            name:"홍길동"
+        },"http://localhost:63342");
+    }
+</script>
+</body>
+</html>
