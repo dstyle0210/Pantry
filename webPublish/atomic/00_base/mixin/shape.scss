@@ -1,0 +1,114 @@
+/*! 정사각형 (Circle Shape) */
+#square {width: 100px;height: 100px;background: red;}
+
+/*! 직사각형 (Rectangle Shape) */
+#rectangle {width: 200px;height: 100px;background: red;}
+
+/*! 원형 (Circle Shape) */
+#circle {width: 100px;height: 100px;background: red;border-radius: 50%}
+
+/*! 타원형 (Oval Shape) */
+#oval {width: 200px;height: 100px;background: red;border-radius: 100px / 50px;}
+
+/*! 삼각형 (Triangle) :  */
+#triangle-up {width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-bottom: 100px solid red;} // 위로 솟은 (Up Shape)
+#triangle-down {width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-top: 100px solid red;} // 아래로 솟은 (Down Shape)
+#triangle-left {width: 0;height: 0;border-top: 50px solid transparent;border-right: 100px solid red;border-bottom: 50px solid transparent;} // 왼쪽으로 솟은 (Left Shape)
+#triangle-right {width: 0;height: 0;border-top: 50px solid transparent;border-left: 100px solid red;border-bottom: 50px solid transparent;} // 오른쪽으로 솟은 (Right Shape)
+#triangle-topleft {width: 0;height: 0;border-top: 100px solid red;border-right: 100px solid transparent;} // 왼쪽 위로 솟은 (Top Left Shape)
+#triangle-topright {width: 0;height: 0;border-top: 100px solid red;border-left: 100px solid transparent;} // 오른쪽 위로 솟은 (Top Right Shape)
+#triangle-bottomleft {width: 0;height: 0;border-bottom: 100px solid red;border-right: 100px solid transparent;} // 왼쪽 아래로 솟은 (Bottom Left Shape)
+#triangle-bottomright {width: 0;height: 0;border-bottom: 100px solid red;border-left: 100px solid transparent;} // 오른쪽 아래로 솟은 (Bottom Left Shape)
+
+/*! 화살표 커브 (Curved Tail Arrow Shape) */
+#curvedarrow {position: relative;width: 0;height: 0;border-top: 9px solid transparent;border-right: 9px solid red;transform: rotate(10deg);}
+#curvedarrow:after {content: "";position: absolute;border: 0 solid transparent;border-top: 3px solid red;border-radius: 20px 0 0 0;top: -12px;left: -9px;width: 12px;height: 12px;transform: rotate(45deg);}
+
+/*! 별모양(5각형 , Star (5-points) Shape) */
+#star-five {margin: 50px 0;position: relative;display: block;color: red;width: 0px;height: 0px;border-right: 100px solid transparent;border-bottom: 70px solid red;border-left: 100px solid transparent;transform: rotate(35deg);}
+#star-five:before {border-bottom: 80px solid red;border-left: 30px solid transparent;border-right: 30px solid transparent;position: absolute;height: 0;width: 0;top: -45px;left: -65px;display: block;content: '';transform: rotate(-35deg);}
+#star-five:after {position: absolute;display: block;color: red;top: 3px;left: -105px;width: 0px;height: 0px;border-right: 100px solid transparent;border-bottom: 70px solid red;border-left: 100px solid transparent;transform: rotate(-70deg);content: '';}
+
+/*! 별모양(6각형 , Star (6-points) Shape) */
+#star-six {width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-bottom: 100px solid red;position: relative;}
+#star-six:after {width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-top: 100px solid red;position: absolute;content: "";top: 30px;left: -50px;}
+
+/*! 별모양(8각형 , 12 Point Burst Shape) */
+#burst-8 {background: red;width: 80px;height: 80px;position: relative;text-align: center;transform: rotate(20deg);}
+#burst-8:before {content: "";position: absolute;top: 0;left: 0;height: 80px;width: 80px;background: red;transform: rotate(135deg);}
+
+/*! 별모양(12각형 , 12 Point Burst Shape) */
+#burst-12 {background: red;width: 80px;height: 80px;position: relative;text-align: center;}
+#burst-12:before,
+#burst-12:after {content: "";position: absolute;top: 0;left: 0;height: 80px;width: 80px;background: red;}
+#burst-12:before {transform: rotate(30deg);}
+#burst-12:after {transform: rotate(60deg);}
+
+/*! 하트모양 (Heart Shape) */
+#heart {position: relative;width: 100px;height: 90px;}
+#heart:before,
+#heart:after {position: absolute;content: "";left: 50px;top: 0;width: 50px;height: 80px;background: red;border-radius: 50px 50px 0 0;transform: rotate(-45deg);transform-origin: 0 100%;}
+#heart:after {left: 0;transform: rotate(45deg);transform-origin: 100% 100%;}
+
+/*! 무한대(뫼비우스) 모양 (Infinity Shape) */
+#infinity {position: relative;width: 212px;height: 100px;box-sizing: content-box;}
+#infinity:before,
+#infinity:after {content: "";box-sizing: content-box;position: absolute;top: 0;left: 0;width: 60px;height: 60px;border: 20px solid red;border-radius: 50px 50px 0 50px;transform: rotate(-45deg);}
+#infinity:after {left: auto;right: 0;border-radius: 50px 50px 50px 0;transform: rotate(45deg);}
+
+/*! 다이아몬드 모양 (Diamond Square Shape) */
+#diamond {width: 0;height: 0;border: 50px solid transparent;border-bottom-color: red;position: relative;top: -50px;}
+#diamond:after {content: '';position: absolute;left: -50px;top: 50px;width: 0;height: 0;border: 50px solid transparent;border-top-color: red;}
+
+/*! 조각된 다이아몬드 모양 (Cut Diamond Shape) */
+#cut-diamond {border-style: solid;border-color: transparent transparent red transparent;border-width: 0 25px 25px 25px;height: 0;width: 50px;box-sizing: content-box;position: relative;margin: 20px 0 50px 0;}
+#cut-diamond:after {content: "";position: absolute;top: 25px;left: -25px;width: 0;height: 0;border-style: solid;border-color: red transparent transparent transparent;border-width: 70px 50px 0 50px;}
+
+/*! 계란모양 (Egg Shape) */
+#egg {display: block;width: 126px;height: 180px;background-color: red;border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;}
+
+/*! 팩맨 (Pac-Man Shape) */
+#pacman {width: 0px;height: 0px;border-right: 60px solid transparent;border-top: 60px solid red;border-left: 60px solid red;border-bottom: 60px solid red;border-top-left-radius: 60px;border-top-right-radius: 60px;border-bottom-left-radius: 60px;border-bottom-right-radius: 60px;}
+
+/*! 말풍선(Talk Bubble Shape) */
+#talkbubble {width: 120px;height: 80px;background: red;position: relative;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;}
+#talkbubble:before {content: "";position: absolute;right: 100%;top: 26px;width: 0;height: 0;border-top: 13px solid transparent;border-right: 26px solid red;border-bottom: 13px solid transparent;}
+
+/*! 훈장 모양 (Badge Ribbon Shape) */
+#badge-ribbon {position: relative;background: red;height: 100px;width: 100px;border-radius: 50px;}
+#badge-ribbon:before,
+#badge-ribbon:after {content: '';position: absolute;border-bottom: 70px solid red;border-left: 40px solid transparent;border-right: 40px solid transparent;top: 70px;left: -10px;transform: rotate(-140deg);}
+#badge-ribbon:after {left: auto;right: -10px;transform: rotate(140deg);}
+
+/* 돋보기 모양 (Magnifying Glass Shape) */
+#magnifying-glass {font-size: 10em;display: inline-block;width: 0.4em;box-sizing: content-box;height: 0.4em;border: 0.1em solid red;position: relative;border-radius: 0.35em;}
+#magnifying-glass:before {content: "";display: inline-block;position: absolute;right: -0.25em;bottom: -0.1em;border-width: 0;background: red;width: 0.35em;height: 0.08em;transform: rotate(45deg);}
+
+/*! 책갈피(즐겨찾기 , bookmark ) */
+#bookmark {width: 110px;height: 56px;box-sizing: content-box;padding-top: 15px;position: relative;background: red;color: white;font-size: 11px;letter-spacing: 0.2em;text-align: center;text-transform: uppercase;}
+#bookmark:after {content: "";position: absolute;left: 0;bottom: 0;width: 0;height: 0;border-bottom: 13px solid #eee;border-left: 55px solid transparent;border-right: 55px solid transparent;}
+
+/*! 더하기 모양 (Cross Shape) */
+#cross {background: red;height: 100px;position: relative;width: 20px;}
+#cross:after {background: red;content: "";height: 20px;left: -40px;position: absolute;top: 40px;width: 100px;}
+/*! 엑스(닫기) 모양 (Close Shape) : 더하기에서 rotateZ 만 추가 */
+#close {background: red;height: 100px;position: relative;width: 20px;transform:rotateZ(45deg);}
+#close:after {background: red;content: "";height: 20px;left: -40px;position: absolute;top: 40px;width: 100px;}
+
+/*! 프로세스 모양 (Process or Pointer) */
+#pointer {width: 200px;height: 40px;position: relative;background: red;}
+#pointer:after {content: "";position: absolute;left: 0;bottom: 0;width: 0;height: 0;border-left: 20px solid white;border-top: 20px solid transparent;border-bottom: 20px solid transparent;}
+#pointer:before {content: "";position: absolute;right: -20px;bottom: 0;width: 0;height: 0;border-left: 20px solid red;border-top: 20px solid transparent;border-bottom: 20px solid transparent;}
+
+/*! 자물쇠 (Lock Shape) */
+#lock {font-size: 8px;position: relative;width: 18em;height: 13em;border-radius: 2em;top: 10em;box-sizing: border-box;border: 3.5em solid red;border-right-width: 7.5em;border-left-width: 7.5em;margin: 0 0 6rem 0;}
+#lock:before {content: "";box-sizing: border-box;position: absolute;border: 2.5em solid red;width: 14em;height: 12em;left: 50%;margin-left: -7em;top: -12em;border-top-left-radius: 7em;border-top-right-radius: 7em;}
+#lock:after {content: "";box-sizing: border-box;position: absolute;border: 1em solid red;width: 5em;height: 8em;border-radius: 2.5em;left: 50%;top: -1em;margin-left: -2.5em;}
+
+/*! 스파이크 */
+.spikes {position: relative;background: #2c3e50;height: 50vh;}
+.spikes::after {content: '';position: absolute;right: 0;left: -0%;top: 100%;z-index: 10;display: block;height: 65px;background-size: 65px 100%;background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%), linear-gradient(225deg, #2c3e50 25%, transparent 25%);background-position: 0 0;}
+
+/*! 영역 하단 아래로 솟은 삼각형 */
+.triangleArea {position: relative;background: #2c3e50;height: 50vh;}
+.triangleArea::before {content: '';position: absolute;bottom: 0;width: 0;height: 0;border-style: solid;border-width: 100px 100px 0 100px;border-color: #2c3e50 transparent transparent transparent;left: 50%;transform: translateX(-50%) translateY(100%);}
