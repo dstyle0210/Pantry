@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/**
+* @File Name : reset.scss
+* @auther : Dstyle
+* @description : 브라우저 네이티브 CSS 초기화
+* @export : reset.css
+*
+* @Modification Information
+*
+* 수정일 : 수정자 : 수정내용
+* -----------------------
+* 2021.03.18 : Dstyle : 최초생성
+*/
+
+// Reboot
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,button,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section , main {display: block;}
+*,::after,::before{box-sizing:border-box;outline:0;-webkit-tap-highlight-color:transparent}
+body,html{width:100%}
+
+// Custom Reset
+dd,dl,dt,li,ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}
+table{border-spacing:0;border-collapse:collapse}
+article,aside,details,dt,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+input[type=password],input[type=text],label{display:inline-block}
+a{background-color: transparent;}
+a,area,button,label{cursor:pointer}
+b,h1,h2,h3,h4,h5,h6,strong{font-weight:700}
+hr,legend,template{display:none}
+button{background:0 0}
+textarea{outline:0;-webkit-border-radius:0;box-shadow:none;resize:none;-webkit-appearance:none}
