@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/*! CSS로 gif 애니메이션 흉내내기
+- step 이용
+ */
+.likeGIFAnimationByCSS{
+  display:inline-block;width:135px;height:40px;background:url('images/@tempAnimation.png') left center;background-size:cover;
+  animation:play 1s steps(3) infinite;
+}
+@keyframes play {
+  0%{background-position:0 0;}
+  100%{background-position:0 -120px}
+}
