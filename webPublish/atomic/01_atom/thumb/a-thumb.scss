@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/**
+* @File Name : a-thumb.scss
+* @auther : Dstyle
+* @description : [A] 이미지 썸네일(또는 캔버스) 요소
+* @export : a-thumb.css
+*
+* @Modification Information
+*
+* 수정일 : 수정자 : 수정내용
+* -----------------------
+* 2021.03.24 : Dstyle : 최초생성
+*/
+.a-thumb{
+  $aThumbBorder:1px solid #ccc; // 썸네일 보더 설정 , none 으로 설정 시 미적용
+  $aThumbRadius:10px; // 썸네일 라운딩 처리, 0 으로 설정시 미적용
+
+  display:inline-block;position:relative;overflow:hidden;
+  &,&:after{box-sizing:border-box;}
+
+  @if $aThumbBorder != none {
+    &:after{position:absolute;top:0;let:0;width:100%;height:100%;border:$border;} // 썸네일에 보더가 들어갈 경우
+  }
+  @if $aThumbRadius != 0 {
+    &,&:after{border-radius:10px;} // 라운딩 처리 필요시
+  }
+
+  // <span class="a-thumb -square"><img /></span>
+  &.-square{padding-top:100%;width:100%;} // 정사각형
+  // <span class="a-thumb -rectangle"><img /></span>
+  &.-rectangle{padding-top:50%;width:100%;} // 직사각형(가로로 긴) , 세로가 길어질려면, padding-top이 100%가 넘으면 됨.
+
+  /* IE가 포함될경우 사용.
+  > img{position:absolute;top:-9999px;left:-9999px;bottom:-9999px;right:-9999px;margin:auto;max-width:100%;max-height:100%;}
+   */
+  > img{display:block;position:absolute;top:-9999px;left:-9999px;bottom:-9999px;right:-9999px;margin:auto;max-width:100%;max-height:100%;}
+  /* IE가 없는경우 사용(Mobile 등)
+  > img{display:block;position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;} // 영역보다 작은이미지는 가운데 정렬
+  > img{display:block;position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;} // 영역보다 작은이미지도 확대하여 적용
+   */
+}
