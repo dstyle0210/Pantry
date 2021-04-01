@@ -2,7 +2,7 @@
 /**
 * @File Name : a-thumb.scss
 * @auther : Dstyle
-* @description : [A] 이미지 썸네일(또는 캔버스) 요소
+* @description : [A] 이미지 썸네일 요소 : 수정자를 통한, 정렬 가능
 * @export : a-thumb.css
 *
 * @Modification Information
@@ -19,7 +19,7 @@
   &,&:after{box-sizing:border-box;}
 
   @if $aThumbBorder != none {
-    &:after{position:absolute;top:0;let:0;width:100%;height:100%;border:$border;} // 썸네일에 보더가 들어갈 경우
+    &:after{position:absolute;top:0;left:0;width:100%;height:100%;border:$aThumbBorder;} // 썸네일에 보더가 들어갈 경우
   }
   @if $aThumbRadius != 0 {
     &,&:after{border-radius:10px;} // 라운딩 처리 필요시
