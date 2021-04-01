@@ -67,7 +67,7 @@ function checkRev(){
         .pipe(dest('./dist/css/'));
 }
 
-exports.dev = series(sassDevCompile);
+exports.dev = series(sassDevCompile,sassWatch);
 exports.dist = series(sassDevCompile , sassDist , checkRev);
 /*exports.sass = series(sassCompile,flagHash);
 exports.sass_watch = series(sassCompile,sassWatch);*/
