@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/**
+* @File Name : m-login.scss
+* @auther : Dstyle
+* @description : [M] 로그인 폼(아이디,비밀번호)
+* @export : m-login.css
+*
+* @Modification Information
+*
+* 수정일 : 수정자 : 수정내용
+* -----------------------
+* 2021.04.08 : Dstyle : 최초생성
+*/
+
+/*! [M] 로그인 폼(아이디,비밀번호) */
+.m-login{width:100%;
+  &__form{position:relative;width:100%;padding-left:90px;
+    &__label{position:absolute;top:0;left:0;width:90px;font-size:13px;}
+    &__input{position:relative;z-index:2;background:transparent;border:0;}
+    &__guide{position:absolute;top:0;left:100px;z-index:1;}
+    &__reset{position:absolute;top:0;right:0;z-index:2;}
+  }
+}
+

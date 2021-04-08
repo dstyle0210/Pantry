@@ -23,6 +23,7 @@
   input[type=number],
   input[type=email]{
     &[class^=a-form]{box-sizing:border-box;border:$border;font-size:$fontSize;color:$fontColor;min-height:$lineHeight;line-height:$lineHeight;width:100%;}
+    &.a-form{box-sizing:border-box;border:$border;font-size:$fontSize;color:$fontColor;min-height:$lineHeight;line-height:$lineHeight;width:100%;}
     &:invalid{border:1px solid red;}
   }
 
