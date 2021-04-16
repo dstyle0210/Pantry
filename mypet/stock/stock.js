@@ -1,6 +1,7 @@
 var webdriver = require("selenium-webdriver"),By = webdriver.By,until = webdriver.until;
 var fs = require('fs');
 var _ = require("lodash");
+var Stocks = require("./stocksData");
 
 // Input capabilities
 var capabilities = {
@@ -14,8 +15,13 @@ var capabilities = {
 }
 
 var driver = new webdriver.Builder().forBrowser("chrome").build();
-var stocks = ["096240", "024110", "105560", "055550", "071050", "316140", "086790", "015760", "044340", "037070", "066130", "045520", "009450", "097950", "002270", "005180", "000080", "017670", "030200", "032640", "005930", "066570", "000660", "013890", "003490", "010950", "225330", "033780", "005300", "280360", "136480", "017810", "004370", "026960", "004170", "031430", "069960", "023530", "192400", "067170", "002700", "027740", "195500", "136480", "034020", "058610", "284740", "006360", "035420", "081660"];
+
+
+var stocks = Stocks.data;
+// var stocks = ["096240", "024110", "105560", "055550", "071050", "316140", "086790", "015760", "044340", "037070", "066130", "045520", "009450", "097950", "002270", "005180", "000080", "017670", "030200", "032640", "005930", "066570", "000660", "013890", "003490", "010950", "225330", "033780", "005300", "280360", "136480", "017810", "004370", "026960", "004170", "031430", "069960", "023530", "192400", "067170", "002700", "027740", "195500", "136480", "034020", "058610", "284740", "006360", "035420", "081660"];
 // var stocks = ["096240","024110","005180"];
+
+
 
 var datas = [];
 async function getNum(sNo){
@@ -57,7 +63,8 @@ async function getNum(sNo){
     data.myStockBuyPrice = (data.myStockPrice * 0.9).toFixed(0) * 1; // 매수예정가
     data.mySafeMargin = ((data.myStockBuyPrice - data.stockPrice)/data.stockPrice)*100; // 안전마진 비율
 
-    if(0 < data.mySafeMargin){
+    // if(0 < data.mySafeMargin){ // 안전마진이 0보다 아래면 정리
+    if(data.stockPrice < data.myStockPrice){ // 적정가격 보다 아래면 정리.
         datas.push(data);
     }
     return data;
@@ -71,7 +78,9 @@ async function start(){
         count++;
         start();
     }else{
-        console.log(datas);
+        var stockDataJs = "export default {data:"+JSON.stringify(datas)+"}";
+        fs.writeFileSync("./report.js",stockDataJs);
+        // console.log(datas);
         driver.quit();
     };
 };
