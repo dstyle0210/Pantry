@@ -53,13 +53,20 @@ async function getNum(sNo){
         };
         return res;
     });
+
+    var naverUrl = `https://finance.naver.com/item/main.nhn?code=${sNo}`;
+    await driver.get(naverUrl);
+    data.stockPrice = await driver.executeScript(function(){
+        return (document.querySelector(".no_today em").innerText).match(/[0-9]+/gi).join("") * 1;
+    });
+
     data.sNo = sNo;
     data.cap = data.stocks * data.stockPrice; // 시가총액
     data.rStocks = data.stocks - data.cStocks; // 유통주식수
     data.dividendAll = data.dividend * data.rStocks; // 배당총액
     data.myconsensus = (data.consensus*100000000) - data.dividendAll;
     data.myROE = ((data.myconsensus / (data.owner*100000000))*100).toFixed(2); // ROE 구하기
-    data.RIM = ((data.myROE - 7.53)/7.53).toFixed(2); // RIM 구하기
+    data.RIM = ((data.myROE - 7.54)/7.54).toFixed(2); // RIM 구하기
     data.myCap = ( data.owner + (data.owner * data.RIM) )*100000000; // RIM 방식의 적정시가총액
     data.myStockPrice = data.myCap / data.rStocks ; // RIM 방식의 적정주가
     data.myStockBuyPrice = (data.myStockPrice * 0.9).toFixed(0) * 1; // 매수예정가
@@ -82,7 +89,7 @@ async function start(){
     }else{
         datas = _.sortBy(datas,"type");
         var stockDataJs = "export default {data:"+JSON.stringify(datas)+"}";
-        fs.writeFileSync("./report.js",stockDataJs);
+        fs.writeFileSync("./src/report.js",stockDataJs);
         // console.log(datas);
         driver.quit();
     };

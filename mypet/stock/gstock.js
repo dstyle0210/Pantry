@@ -42,7 +42,7 @@ async function start(){
             return i.replace("https://finance.naver.com/item/main.nhn?code=","");
         })
         console.log(stockNos);
-        var stockDataJs = "export.data="+JSON.stringify(stockNos)+"";
+        var stockDataJs = "exports.data="+JSON.stringify(stockNos)+"";
         await fs.writeFileSync("./stocksData.js",stockDataJs);
         await driver.quit();
     };
