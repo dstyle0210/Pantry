@@ -28,6 +28,19 @@ async function getStockNo(sNo){
     return datas;
 };
 
+async function getStockNo2(){
+    var url = `https://nextnormalone.tistory.com/77`;
+    await driver.get(url);
+    var datas = await driver.executeScript(function(){
+        var datas = [];
+        $("[data-ke-style=style15] tr").each(function(){
+            datas.push( $(this).find("td:eq(2) p").text() );
+        });
+        datas.shift();
+        return datas;
+    });
+    return datas;
+};
 
 let count = 0;
 async function start(){
@@ -38,10 +51,14 @@ async function start(){
         stocks = stocks.concat(stocksList);
         start(); // 재귀
     }else{
+        var kqData = await getStockNo2();
+        console.log(kqData.length);
+        stocks = stocks.concat(kqData);
+        console.log(stocks.length);
         var stockNos = _.map(stocks,function(i,item){
             return i.replace("https://finance.naver.com/item/main.nhn?code=","");
         })
-        console.log(stockNos);
+        // console.log(stockNos);
         var stockDataJs = "exports.data="+JSON.stringify(stockNos)+"";
         await fs.writeFileSync("./stocksData.js",stockDataJs);
         await driver.quit();
@@ -49,3 +66,6 @@ async function start(){
 };
 start();
 // https://finance.naver.com/sise/entryJongmok.nhn?&page=1
+
+
+
